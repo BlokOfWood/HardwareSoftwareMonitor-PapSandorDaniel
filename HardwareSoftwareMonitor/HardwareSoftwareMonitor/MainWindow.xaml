@@ -8,21 +8,34 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <TabControl HorizontalAlignment="Left" Height="404" Margin="11,8,0,0" VerticalAlignment="Top" Width="769" RenderTransformOrigin="0.5,0.5">
-            <TabControl.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.276"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TabControl.RenderTransform>
             <TabItem Header="Hardware Elemek">
-                <Grid Background="#FFE5E5E5"/>
+                <ScrollViewer HorizontalAlignment="Left" Height="363" Margin="0,2,0,0" VerticalAlignment="Top" Width="753">
+                    <Grid Background="#FFE5E5E5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="241*"/>
+                            <ColumnDefinition Width="495*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Alaplap Gyártó:" HorizontalAlignment="Left" Margin="10,9,0,0" VerticalAlignment="Top" Height="26" Width="91"/>
+                        <Label Content="Alaplap:" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" Height="26" Width="56"/>
+                        <Label x:Name="MotherboardProduct" Content="" HorizontalAlignment="Left" Margin="116,40,0,0" VerticalAlignment="Top" Height="26" Width="275" Grid.ColumnSpan="2"/>
+                        <Label x:Name="MotherboardManufacturer" Content="" HorizontalAlignment="Left" Margin="116,9,0,0" VerticalAlignment="Top" Height="26" Width="275" Grid.ColumnSpan="2"/>
+                        <Label Content="Processzor:" HorizontalAlignment="Left" Margin="10,71,0,0" VerticalAlignment="Top" Height="26" Width="71"/>
+                        <Label x:Name="Processor" Content="" HorizontalAlignment="Left" Margin="116,71,0,0" VerticalAlignment="Top" Height="26" Width="275" Grid.ColumnSpan="2"/>
+                        <Label Content="Videókártya:" HorizontalAlignment="Left" Margin="10,102,0,0" VerticalAlignment="Top" Height="26" Width="91"/>
+                        <Label x:Name="Videocard" Content="" HorizontalAlignment="Left" Margin="116,102,0,0" VerticalAlignment="Top" Height="26" Width="275" Grid.ColumnSpan="2"/>
+                        <Label Content="BIOS Gyártó:" HorizontalAlignment="Left" Margin="10,133,0,0" VerticalAlignment="Top" Height="26" Width="91"/>
+                        <Label x:Name="BIOSManufacturer" Content="" HorizontalAlignment="Left" Margin="116,133,0,0" VerticalAlignment="Top" Height="26" Width="275" Grid.ColumnSpan="2"/>
+                        <Label Content="BIOS Név:" HorizontalAlignment="Left" Margin="10,164,0,0" VerticalAlignment="Top" Height="26" Width="91"/>
+                        <Label x:Name="BIOS_Name" Content="" HorizontalAlignment="Left" Margin="116,164,0,0" VerticalAlignment="Top" Height="26" Width="275" Grid.ColumnSpan="2"/>
+                    </Grid>
+                </ScrollViewer>
             </TabItem>
             <TabItem Header="Érzékelők">
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
-            <TabItem Header="Telepített Szoftverek"/>
+            <TabItem Header="Telepített Szoftverek">
+                <DataGrid x:Name="SoftwareGrid" HorizontalAlignment="Left" Height="377" VerticalAlignment="Top" Width="762" Margin="0,0,0,0"/>
+            </TabItem>
         </TabControl>
 
     </Grid>
