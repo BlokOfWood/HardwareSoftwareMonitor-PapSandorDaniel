@@ -82,5 +82,33 @@ namespace HardwareSoftwareMonitor
 
             return returnValue;
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            List<string> outputString = new List<string>();
+            outputString.Add("dataname;value");
+            outputString.Add(string.Join(";", "Motherboard Manufacturer", GetComponent("Win32_BaseBoard", "Manufacturer")));
+            outputString.Add(string.Join(";", "Motherboard", GetComponent("Win32_BaseBoard", "Product")));
+            outputString.Add(string.Join(";", "Processor", GetComponent("Win32_Processor", "Name")));
+            outputString.Add(string.Join(";", "VideoCard", GetComponent("Win32_VideoController", "Name")));
+            outputString.Add(string.Join(";", "BIOS Manufacturer", GetComponent("Win32_BIOS", "Manufacturer")));
+            outputString.Add(string.Join(";", "BIOSName", GetComponent("Win32_BIOS", "Name")));
+
+            outputString.Add("applicationame;applicationversion;installlocation");
+            foreach(var i in _softwareList)
+            {
+                if(i.Name != "")
+                outputString.Add(string.Join(";", i.Name, i.Version, i.InstallLocation));
+            }
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog() { 
+                Filter = "Comma-separated values file (.csv) | *.csv"
+            };
+
+            if(saveFileDialog.ShowDialog() == true)
+            {
+                System.IO.File.WriteAllLines(saveFileDialog.FileName, outputString);
+            }
+        }
     }
 }

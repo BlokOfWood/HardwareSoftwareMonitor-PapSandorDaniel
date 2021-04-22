@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HardwareSoftwareMonitor"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" ResizeMode="NoResize">
+        Title="MainWindow" Height="495.571" Width="800" ResizeMode="NoResize">
     <Grid>
         <TabControl HorizontalAlignment="Left" Height="404" Margin="11,8,0,0" VerticalAlignment="Top" Width="769" RenderTransformOrigin="0.5,0.5">
             <TabItem Header="Hardware Elemek">
@@ -16,10 +16,10 @@
                             <ColumnDefinition Width="495*"/>
                         </Grid.ColumnDefinitions>
                         <Label Content="Alaplap Gyártó:" HorizontalAlignment="Left" Margin="10,9,0,0" VerticalAlignment="Top" Height="26" Width="91"/>
-                        <Label Content="Alaplap:" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" Height="26" Width="56"/>
+                        <Label Content="Alaplap:" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" Height="26" Width="91"/>
                         <Label x:Name="MotherboardProduct" Content="" HorizontalAlignment="Left" Margin="116,40,0,0" VerticalAlignment="Top" Height="26" Width="275" Grid.ColumnSpan="2"/>
                         <Label x:Name="MotherboardManufacturer" Content="" HorizontalAlignment="Left" Margin="116,9,0,0" VerticalAlignment="Top" Height="26" Width="275" Grid.ColumnSpan="2"/>
-                        <Label Content="Processzor:" HorizontalAlignment="Left" Margin="10,71,0,0" VerticalAlignment="Top" Height="26" Width="71"/>
+                        <Label Content="Processzor:" HorizontalAlignment="Left" Margin="10,71,0,0" VerticalAlignment="Top" Height="26" Width="91"/>
                         <Label x:Name="Processor" Content="" HorizontalAlignment="Left" Margin="116,71,0,0" VerticalAlignment="Top" Height="26" Width="275" Grid.ColumnSpan="2"/>
                         <Label Content="Videókártya:" HorizontalAlignment="Left" Margin="10,102,0,0" VerticalAlignment="Top" Height="26" Width="91"/>
                         <Label x:Name="Videocard" Content="" HorizontalAlignment="Left" Margin="116,102,0,0" VerticalAlignment="Top" Height="26" Width="275" Grid.ColumnSpan="2"/>
@@ -30,13 +30,11 @@
                     </Grid>
                 </ScrollViewer>
             </TabItem>
-            <TabItem Header="Érzékelők">
-                <Grid Background="#FFE5E5E5"/>
-            </TabItem>
             <TabItem Header="Telepített Szoftverek">
                 <DataGrid x:Name="SoftwareGrid" HorizontalAlignment="Left" Height="377" VerticalAlignment="Top" Width="762" Margin="0,0,0,0"/>
             </TabItem>
         </TabControl>
+        <Button Content="Export" HorizontalAlignment="Left" Margin="11,424,0,0" VerticalAlignment="Top" Width="94" Height="33" Click="Button_Click"/>
 
     </Grid>
 </Window>
